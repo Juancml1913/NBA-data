@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NBA_data.Views.PlayerDetailsPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Player details">
+    <ContentPage.Content>
+        <ScrollView BindingContext="{Binding PlayerDetails}">
+            <StackLayout Padding="10">
+                <Image HeightRequest="150" HorizontalOptions="Center" IsAnimationPlaying="True"
+                    Source="{Binding ImageSource}">                    
+                </Image>                
+                <StackLayout Spacing="60" BindingContext="{Binding Player}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        Text="First name" 
+                        FontSize="Medium">
+                        </Label>
+                        <Label 
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        Text="{Binding FirstName}" 
+                        FontSize="Medium" 
+                        FontAttributes="Bold"
+                        HorizontalOptions="Start">
+                        </Label>
+
+                        <Label
+                        Grid.Column="0"
+                        Grid.Row="1"
+                        Text="Last name" 
+                        FontSize="Medium">
+                        </Label>
+                        <Label 
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        Text="{Binding LastName}" 
+                        FontSize="Medium" 
+                        FontAttributes="Bold"
+                        HorizontalOptions="Start">
+                        </Label>
+
+                        <Label
+                        Grid.Column="0"
+                        Grid.Row="2"
+                        Text="Position" 
+                        FontSize="Medium">
+                        </Label>
+                        <Label 
+                        Grid.Column="1"
+                        Grid.Row="2"
+                        Text="{Binding Position}" 
+                        FontSize="Medium" 
+                        FontAttributes="Bold"
+                        HorizontalOptions="Start">
+                        </Label>
+
+                        <Label
+                        Grid.Column="0"
+                        Grid.Row="3"
+                        Text="Height feet" 
+                        FontSize="Medium">
+                        </Label>
+                        <Label 
+                        Grid.Column="1"
+                        Grid.Row="3"
+                        Text="{Binding HeightFeet}" 
+                        FontSize="Medium" 
+                        FontAttributes="Bold"
+                        HorizontalOptions="Start">
+                        </Label>
+
+                        <Label
+                        Grid.Column="0"
+                        Grid.Row="4"
+                        Text="Height inches" 
+                        FontSize="Medium">
+                        </Label>
+                        <Label 
+                        Grid.Column="1"
+                        Grid.Row="4"
+                        Text="{Binding HeightInches}" 
+                        FontSize="Medium" 
+                        FontAttributes="Bold"
+                        HorizontalOptions="Start">
+                        </Label>
+
+                        <Label
+                        Grid.Column="0"
+                        Grid.Row="5"
+                        Text="Weight pounds" 
+                        FontSize="Medium">
+                        </Label>
+                        <Label 
+                        Grid.Column="1"
+                        Grid.Row="5"
+                        Text="{Binding WeightPounds}" 
+                        FontSize="Medium" 
+                        FontAttributes="Bold"
+                        HorizontalOptions="Start">
+                        </Label>
+
+                        <Label
+                        Grid.Column="0"
+                        Grid.Row="6"
+                        Text="Team" 
+                        FontSize="Medium">
+                        </Label>
+                        <Label 
+                        Grid.Column="1"
+                        Grid.Row="6"
+                        Text="{Binding Team.FullName}" 
+                        FontSize="Medium" 
+                        FontAttributes="Bold"
+                        HorizontalOptions="Start">
+                        </Label>
+                    </Grid>
+                </StackLayout>
+                <ActivityIndicator VerticalOptions="CenterAndExpand" IsRunning="{Binding IsRunning}"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

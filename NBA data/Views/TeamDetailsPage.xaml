@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NBA_data.Views.TeamDetailsPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Team details">
+    <ContentPage.Content>
+        <ScrollView BindingContext="{Binding TeamDetails}">
+            <StackLayout Padding="10">
+                <Image HeightRequest="150" HorizontalOptions="Center" IsAnimationPlaying="True"
+                    Source="{Binding ImageSource}">
+                </Image>
+                <StackLayout Spacing="60" BindingContext="{Binding Team}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        Text="Name" 
+                        FontSize="Medium">
+                        </Label>
+                        <Label 
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        Text="{Binding Name}" 
+                        FontSize="Medium" 
+                        FontAttributes="Bold"
+                        HorizontalOptions="Start">
+                        </Label>
+
+                        <Label
+                        Grid.Column="0"
+                        Grid.Row="1"
+                        Text="Full name" 
+                        FontSize="Medium">
+                        </Label>
+                        <Label 
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        Text="{Binding FullName}" 
+                        FontSize="Medium" 
+                        FontAttributes="Bold"
+                        HorizontalOptions="Start">
+                        </Label>
+
+                        <Label
+                        Grid.Column="0"
+                        Grid.Row="2"
+                        Text="City" 
+                        FontSize="Medium">
+                        </Label>
+                        <Label 
+                        Grid.Column="1"
+                        Grid.Row="2"
+                        Text="{Binding City}" 
+                        FontSize="Medium" 
+                        FontAttributes="Bold"
+                        HorizontalOptions="Start">
+                        </Label>
+
+                        <Label
+                        Grid.Column="0"
+                        Grid.Row="3"
+                        Text="Conference" 
+                        FontSize="Medium">
+                        </Label>
+                        <Label 
+                        Grid.Column="1"
+                        Grid.Row="3"
+                        Text="{Binding Conference}" 
+                        FontSize="Medium" 
+                        FontAttributes="Bold"
+                        HorizontalOptions="Start">
+                        </Label>
+
+                        <Label
+                        Grid.Column="0"
+                        Grid.Row="4"
+                        Text="Division" 
+                        FontSize="Medium">
+                        </Label>
+                        <Label 
+                        Grid.Column="1"
+                        Grid.Row="4"
+                        Text="{Binding Division}" 
+                        FontSize="Medium" 
+                        FontAttributes="Bold"
+                        HorizontalOptions="Start">
+                        </Label>
+                    </Grid>                    
+                </StackLayout>
+                <ActivityIndicator VerticalOptions="CenterAndExpand" IsRunning="{Binding IsRunning}"/>
+            </StackLayout>            
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

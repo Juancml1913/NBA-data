@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NBA_data.Views.GamesPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Games">
+    <ContentPage.Content>
+        <RefreshView BindingContext="{Binding Games}" IsRefreshing="{Binding IsRefreshing}" Command="{Binding RefreshCommand}">
+            <ScrollView>
+                <StackLayout            
+            Padding="10">
+                    <SearchBar
+                BackgroundColor="Transparent"
+                HeightRequest="40"
+                Placeholder="Search"
+                SearchCommand="{Binding SearchCommand}"
+                Text="{Binding Filter}">
+                    </SearchBar>
+                    <ListView
+                BackgroundColor="Transparent"
+                HasUnevenRows="True"                
+                ItemsSource="{Binding Games}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Grid.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding GameDetailsCommand}"/>
+                                        </Grid.GestureRecognizers>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label
+                                        Grid.Column="0"
+                                        Text="{Binding HomeTeam.Name}"
+                                        VerticalOptions="Center"
+                                        FontSize="Medium"
+                                        FontAttributes="Bold"
+                                        HorizontalOptions="Start">
+                                        </Label>
+                                        <StackLayout Grid.Column="1">
+                                            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                                                <Label
+                                            Text="{Binding HomeTeamScore}"
+                                            VerticalOptions="Center"
+                                            FontSize="Subtitle"
+                                            FontAttributes="Bold">
+                                                </Label>
+                                                <Label
+                                            Text="{Binding VisitorTeamScore}"
+                                            VerticalOptions="Center"
+                                            FontSize="Subtitle"
+                                            FontAttributes="Bold">
+                                                </Label>
+                                            </StackLayout>
+                                            <Label
+                                        HorizontalOptions="Center"
+                                        Text="{Binding DateFormat}"
+                                        VerticalOptions="Center"
+                                        FontSize="Small">
+                                            </Label>
+                                        </StackLayout>
+                                        <Label Grid.Column="2"
+                                        Text="{Binding VisitorTeam.Name}"
+                                        VerticalOptions="Center"
+                                        FontSize="Medium"
+                                        FontAttributes="Bold"
+                                       HorizontalOptions="End">
+                                        </Label>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                        <Label FontSize="Small" Text="Total pages:"/>
+                        <Label FontSize="Small" Text="{Binding Meta.TotalPages}" FontAttributes="Bold"/>
+                        <Label FontSize="Small" Text="Current page:"/>
+                        <Label FontSize="Small" Text="{Binding Meta.CurrentPage}" FontAttributes="Bold"/>
+                        <Label FontSize="Small" Text="Next page:"/>
+                        <Label FontSize="Small" Text="{Binding Meta.NextPage}" FontAttributes="Bold"/>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="Center" Orientation="Horizontal" Spacing="50">
+                        <Image Source="leftIcon">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding LeftPageCommand}"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Image Source="rightIcon">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding RightPageCommand}"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            
+        </RefreshView>
+        
+    </ContentPage.Content>
+</ContentPage>

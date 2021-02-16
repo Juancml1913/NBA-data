@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NBA_data.Views.GameDetailsPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Game details">
+    <ContentPage.Content>
+        <ScrollView BindingContext="{Binding GameDetails}">
+            <StackLayout Spacing="60" BindingContext="{Binding Game}" Padding="10">
+                <StackLayout Spacing="30" HorizontalOptions="Center" Orientation="Horizontal">
+                    <Label
+                                        Text="{Binding HomeTeam.Name}"
+                                        VerticalOptions="Center"
+                                        FontSize="Medium"
+                                        FontAttributes="Bold"
+                                        HorizontalOptions="Start">
+                    </Label>
+                    <StackLayout>
+                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                            <Label
+                                            Text="{Binding HomeTeamScore}"
+                                            VerticalOptions="Center"
+                                            FontSize="Subtitle"
+                                            FontAttributes="Bold">
+                            </Label>
+                            <Label
+                                            Text="{Binding VisitorTeamScore}"
+                                            VerticalOptions="Center"
+                                            FontSize="Subtitle"
+                                            FontAttributes="Bold">
+                            </Label>
+                        </StackLayout>
+                        <Label
+                                        HorizontalOptions="Center"
+                                        Text="{Binding DateFormat}"
+                                        VerticalOptions="Center"
+                                        FontSize="Small">
+                        </Label>
+                    </StackLayout>
+                    <Label              Text="{Binding VisitorTeam.Name}"
+                                        VerticalOptions="Center"
+                                        FontSize="Medium"
+                                        FontAttributes="Bold"
+                                       HorizontalOptions="End">
+                    </Label>
+                </StackLayout>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        Text="Period" 
+                        FontSize="Medium">
+                    </Label>
+                    <Label 
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        Text="{Binding Period}" 
+                        FontSize="Medium" 
+                        FontAttributes="Bold"
+                        HorizontalOptions="End">
+                    </Label>
+
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="1"
+                        Text="Post season" 
+                        FontSize="Medium">
+                    </Label>
+                    <Label 
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        Text="{Binding PostSeason}" 
+                        FontSize="Medium" 
+                        FontAttributes="Bold"
+                        HorizontalOptions="End">
+                    </Label>
+
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="2"
+                        Text="Season" 
+                        FontSize="Medium">
+                    </Label>
+                    <Label 
+                        Grid.Column="1"
+                        Grid.Row="2"
+                        Text="{Binding Season}" 
+                        FontSize="Medium" 
+                        FontAttributes="Bold"
+                        HorizontalOptions="End">
+                    </Label>
+
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="3"
+                        Text="Status" 
+                        FontSize="Medium">
+                    </Label>
+                    <Label 
+                        Grid.Column="1"
+                        Grid.Row="3"
+                        Text="{Binding Status}" 
+                        FontSize="Medium" 
+                        FontAttributes="Bold"
+                        HorizontalOptions="End">
+                    </Label>
+
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="4"
+                        Text="Time" 
+                        FontSize="Medium">
+                    </Label>
+                    <Label 
+                        Grid.Column="1"
+                        Grid.Row="4"
+                        Text="{Binding Time}" 
+                        FontSize="Medium" 
+                        FontAttributes="Bold"
+                        HorizontalOptions="End">
+                    </Label>
+                </Grid>
+                
+            </StackLayout>
+        </ScrollView>        
+    </ContentPage.Content>
+</ContentPage>

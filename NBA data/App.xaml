@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:infra="clr-namespace:NBA_data.Infrastructure"
+             x:Class="NBA_data.App">
+    <Application.Resources>
+        <!-- Locator -->
+        <infra:InstanceLocator x:Key="Locator"/>
+
+        <!-- Parameters -->
+        <x:String x:Key="UrlAPI">https://free-nba.p.rapidapi.com</x:String>
+        <x:String x:Key="UrlGames">/games</x:String>
+        <x:String x:Key="UrlTeams">/teams</x:String>
+        <x:String x:Key="UrlPlayers">/players</x:String>
+        <x:String x:Key="x-rapidapi-host">free-nba.p.rapidapi.com</x:String>
+
+        <x:String x:Key="UrlAPI2">https://contextualwebsearch-websearch-v1.p.rapidapi.com</x:String>
+        <x:String x:Key="UrlImage">/api/Search/ImageSearchAPI</x:String>
+        <x:String x:Key="x-rapidapi-host2">contextualwebsearch-websearch-v1.p.rapidapi.com</x:String>
+        
+        <x:String x:Key="x-rapidapi-key">d295638b30msh2321d736bd439c8p1dbe4ejsn2a588bf4b2a7</x:String>        
+        <x:String x:Key="useQueryString">true</x:String>
+    </Application.Resources>
+</Application>
